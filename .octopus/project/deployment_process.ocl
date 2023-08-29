@@ -182,17 +182,3 @@ step "generate-issue-on-failure" {
         }
     }
 }
-
-step "run-a-script-from-upstream" {
-    name = "Run a Script from upstream"
-
-    action {
-        action_type = "Octopus.Script"
-        properties = {
-            Octopus.Action.Script.ScriptBody = "echo \"hi\""
-            Octopus.Action.Script.ScriptSource = "Inline"
-            Octopus.Action.Script.Syntax = "PowerShell"
-        }
-        worker_pool = "hosted-ubuntu"
-    }
-}
